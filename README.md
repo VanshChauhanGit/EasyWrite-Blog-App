@@ -1,8 +1,5 @@
-# React + Vite
+# EasyWrite - Blog App > 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+EasyWrite is a Blog app, where you can see posts by uploaded by other users and also you can add blog posts after signup to EasyWrite.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technologies : React, JavaScript, Appwrite, Redux, Tailwindcss, TinyMCE - Real time editor, html-react-parser
