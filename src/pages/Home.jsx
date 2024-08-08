@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config";
 import { Container, PostCard, Loader } from "../components";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [posts, setPosts] = useState([]);
   const authStatus = useSelector((state) => state.auth.status);
+  const navigate = useNavigate();
 
   useEffect(() => {
     appwriteService.getPosts([]).then((posts) => {
@@ -34,7 +36,7 @@ function Home() {
             </p>
             <button
               onClick={() => {
-                window.location.href = "/login";
+                navigate("/login");
               }}
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
@@ -42,7 +44,7 @@ function Home() {
             </button>
             <button
               onClick={() => {
-                window.location.href = "/signup";
+                navigate("/signup");
               }}
               className="bg-blue-500 hover:bg-blue-700 text-white ml-3 font-bold py-2 px-4 rounded"
             >
