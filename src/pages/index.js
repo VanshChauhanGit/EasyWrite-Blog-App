@@ -7,5 +7,6 @@ import Signup from "./Signup";
 import AddPost from "./AddPost";
 import PageNotFound from "./PageNotFound";
 import MyPosts from "./MyPosts";
+import Profile from "./Profile";
 
-export { Home, AddPost, AllPosts, EditPost, Login, Post, Signup, PageNotFound, MyPosts };
+export { Home, AddPost, AllPosts, EditPost, Login, Post, Signup, PageNotFound, MyPosts, Profile };

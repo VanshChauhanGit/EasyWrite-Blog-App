@@ -1,5 +1,5 @@
-import React from "react";
-import { Logo, LogoutBtn, Container } from "../index";
+import React, { Children } from "react";
+import { Logo, LogoutBtn, Container, Button } from "../index";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -40,6 +40,11 @@ function Header() {
       name: "Signup",
       slug: "/signup",
       active: !authStatus,
+    },
+    {
+      name: "My Profile",
+      slug: "/my-profile",
+      active: authStatus,
     },
   ];
 
@@ -84,12 +89,13 @@ function Header() {
             {navBtns.map((item) =>
               item.active ? (
                 <li key={item.name}>
-                  <button
+                  <Button
+                    children={item.name}
+                    bgColor="bg-blue-200"
+                    textColor="text-black"
                     onClick={() => navagate(item.slug)}
-                    className="inline-block px-4 py-2 font-semibold rounded-xl shadow-xl ml-4 text-black duration-300 bg-blue-200 hover:bg-blue-500 hover:text-white"
-                  >
-                    {item.name}
-                  </button>
+                    className="hover:bg-blue-500 hover:text-white duration-300 mr-2"
+                  />
                 </li>
               ) : null
             )}

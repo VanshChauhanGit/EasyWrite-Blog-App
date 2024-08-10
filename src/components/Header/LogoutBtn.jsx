@@ -10,13 +10,6 @@ function LogoutBtn() {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 
-  // const logoutHandler = () => {
-  //   authService.logout().then(() => {
-  //     dispatch(logout());
-  //     navigate("/");
-  //     window.location.reload();
-  //   });
-  // };
 
   const logoutHandler = () => {
     setShowModal(true);

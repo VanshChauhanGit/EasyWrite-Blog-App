@@ -52,10 +52,20 @@ export default function Post() {
             className="max-w-full max-h-96 mx-auto rounded-xl object-cover"
           />
         </div>
-        <div className="w-full mb-6">
+        <div className="w-full mb-8">
           <h1 className="text-2xl font-bold">{post.title}</h1>
           {isAuthor && (
             <div className="mt-4">
+              <p className="text-xl">
+                Status :{" "}
+                {post.status === "active" ? (
+                  <p className="mb-3 text-green-600 text-xl inline-block">
+                    Active
+                  </p>
+                ) : (
+                  <p className="mb-3 text-red-600 inline-block">Inactive</p>
+                )}
+              </p>
               <Link to={`/edit-post/${post.$id}`}>
                 <Button
                   bgColor="bg-green-500"

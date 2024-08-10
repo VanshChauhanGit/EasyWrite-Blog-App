@@ -1,38 +1,60 @@
 import { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config";
 import { Container, PostCard, Loader } from "../components";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { Query } from "appwrite";
 import authService from "../appwrite/auth";
 
 function MyPosts() {
   const [posts, setPosts] = useState([]);
-  const authStatus = useSelector((state) => state.auth.status);
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
+    setLoading(true);
     (async () => {
-      const userData = await authService.getCurrentUser();
-      if (userData) {
-        const userId = userData.$id;
-        appwriteService
-          .getPosts([Query.equal("userId", userId)])
-          .then((posts) => {
-            if (posts) {
-              setPosts(posts.documents);
-            }
-          });
+      try {
+        const userData = await authService.getCurrentUser();
+        if (userData) {
+          const userId = userData.$id;
+          appwriteService
+            .getPosts([Query.equal("userId", userId)])
+            .then((posts) => {
+              if (posts) {
+                setPosts(posts.documents);
+              }
+            })
+            .finally(() => setLoading(false));
+        }
+      } catch (error) {
+        console.log("My Posts :: Error ", error);
+        setLoading(false);
+        setError(error.message);
       }
     })();
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return (
+      <div
+        className="
+    py-8 w-full min-h-[90vh] flex justify-center items-center
+    text-lg text-red-500"
+      >
+        {error}
+      </div>
+    );
+  }
 
   return posts.length !== 0 ? (
     <div className="py-8 w-full min-h-[100vh]">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {posts.map((post) => (
-            <PostCard key={post.$id} {...post} />
+            <PostCard key={post.$id} {...post} showStatus={true} />
           ))}
         </div>
       </Container>

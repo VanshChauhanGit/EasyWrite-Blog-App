@@ -14,6 +14,7 @@ import {
   Signup,
   PageNotFound,
   MyPosts,
+  Profile,
 } from "./pages";
 import { AddPost } from "./pages/AddPost.jsx";
 import { AuthLayout } from "./components/index.js";
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "/post/:slug",
         element: <Post />,
+      },
+      {
+        path: "/my-profile",
+        element: <Profile />,
       },
       {
         path: "*",
