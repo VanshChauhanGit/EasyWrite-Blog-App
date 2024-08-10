@@ -22,11 +22,11 @@ function Login() {
         const userData = await authService.getCurrentUser();
         if (userData) dispatch(authLogin(userData));
         navigate("/");
-        window.location.reload();
         setIsLoading(false);
       }
     } catch (err) {
       setError(err.message);
+      setIsLoading(false);
     }
   };
 
