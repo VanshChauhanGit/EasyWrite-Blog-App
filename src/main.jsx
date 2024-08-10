@@ -5,7 +5,15 @@ import "./index.css";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, AllPosts, EditPost, Login, Post, Signup } from "./pages";
+import {
+  Home,
+  AllPosts,
+  EditPost,
+  Login,
+  Post,
+  Signup,
+  PageNotFound,
+} from "./pages";
 import { AddPost } from "./pages/AddPost.jsx";
 import { AuthLayout } from "./components/index.js";
 
@@ -65,7 +73,7 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <div>404</div>,
+        element: <PageNotFound />,
       },
     ],
   },
