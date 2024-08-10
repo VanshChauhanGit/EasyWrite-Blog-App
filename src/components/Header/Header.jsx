@@ -19,6 +19,11 @@ function Header() {
       active: authStatus,
     },
     {
+      name: "My Posts",
+      slug: "/my-posts",
+      active: authStatus,
+    },
+    {
       name: "Add Post",
       slug: "/add-post",
       active: authStatus,
@@ -55,7 +60,10 @@ function Header() {
         <nav className="flex">
           <div className="mr-4">
             <Link to="/">
-              <Logo width="100px" className="pt-1 text-3xl text-blue-700 hover:text-black" />
+              <Logo
+                width="100px"
+                className="pt-1 text-3xl text-blue-700 hover:text-black"
+              />
             </Link>
           </div>
           <ul className="flex mx-auto">

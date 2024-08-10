@@ -13,6 +13,7 @@ import {
   Post,
   Signup,
   PageNotFound,
+  MyPosts,
 } from "./pages";
 import { AddPost } from "./pages/AddPost.jsx";
 import { AuthLayout } from "./components/index.js";
@@ -55,6 +56,14 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication={true}>
             <AllPosts />
+          </AuthLayout>
+        ),
+      },
+      {
+        path: "/my-posts",
+        element: (
+          <AuthLayout authentication={true}>
+            <MyPosts />
           </AuthLayout>
         ),
       },
