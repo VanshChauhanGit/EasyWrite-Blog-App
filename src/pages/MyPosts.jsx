@@ -50,7 +50,7 @@ function MyPosts() {
   }
 
   return posts.length !== 0 ? (
-    <div className="py-8 w-full min-h-[100vh]">
+    <div className="py-24 w-full min-h-[100vh]">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {posts.map((post) => (

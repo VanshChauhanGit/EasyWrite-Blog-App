@@ -39,8 +39,8 @@ function LogoutBtn() {
       {showModal && (
         <Modal>
           <div className="flex flex-col items-center justify-center p-4">
-            <h2 className="text-lg text-black font-bold mb-2">Confirm Logout</h2>
-            <p className="text-gray-600">Are you sure you want to logout?</p>
+            <h2 className="text-lg text-black dark:text-white font-bold mb-2">Confirm Logout</h2>
+            <p className="text-gray-600 dark:text-gray-300">Are you sure you want to logout?</p>
             <div className="flex justify-center mt-4">
               <Button
                 children={"Yes, Logout"}

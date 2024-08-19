@@ -89,13 +89,16 @@ export default function PostForm({ post }) {
   }, [watch, slugTransform, setValue]);
 
   return !isLoading ? (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
+    <form
+      onSubmit={handleSubmit(submit)}
+      className="flex flex-wrap w-full mx-auto rounded-lg px-4 py-6 text-white bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-10 backdrop-blur-lg border border-gray-600 border-opacity-50 "
+    >
       <div className="w-full">
         <Input
           label="Title"
           placeholder="Title"
-          className="mb-4"
-          labelClassName="text-xl"
+          className="mb-4 text-black font-semibold text-lg"
+          labelClassName="text-xl text-black dark:text-white"
           required
           {...register("title", { required: true })}
         />
@@ -103,7 +106,7 @@ export default function PostForm({ post }) {
           label="Slug"
           placeholder="Slug"
           className="mb-4"
-          labelClassName="text-xl"
+          labelClassName="text-xl text-black dark:text-white"
           readOnly
           {...register("slug", { required: true })}
           onInput={(e) => {
@@ -117,7 +120,7 @@ export default function PostForm({ post }) {
           name="content"
           required
           control={control}
-          labelClassName="text-xl font-semibold"
+          labelClassName="text-xl font-semibold text-black dark:text-white"
           defaultValue={getValues("content")}
         />
       </div>
@@ -126,7 +129,7 @@ export default function PostForm({ post }) {
           label="Featured Image"
           type="file"
           className="mb-4"
-          labelClassName="text-xl mt-4"
+          labelClassName="text-xl mt-4 text-black dark:text-white"
           accept="image/png, image/jpg, image/jpeg, image/gif"
           {...register("image", { required: !post })}
         />
@@ -144,7 +147,7 @@ export default function PostForm({ post }) {
           options={["active", "inactive"]}
           label="Status"
           className="mb-4 "
-          labelClassName="text-xl font-semibold flex ms-1 mb-1"
+          labelClassName="text-xl font-semibold flex ms-1 mb-1 text-black dark:text-white"
           {...register("status", { required: true })}
         />
         <Button

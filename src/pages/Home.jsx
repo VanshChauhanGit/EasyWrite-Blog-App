@@ -3,6 +3,7 @@ import appwriteService from "../appwrite/config";
 import { Container, PostCard, Loader } from "../components";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import "../App.css";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -22,16 +23,16 @@ function Home() {
       <div className="h-screen flex justify-center items-center">
         <div className="w-full max-w-md">
           <Container>
-            <h1 className="text-4xl font-bold mb-4">
+            <h1 className="text-4xl font-bold mb-4 dark:text-white">
               Welcome to{" "}
-              <span className="text-blue-500 hover:text-blue-700 duration-300 font-mono hover:cursor-default">
+              <span className="text-blue-500 hover:text-blue-700 duration-300 font-mono hover:cursor-default whitespace-nowrap overflow-hidden w-0 rewriting-text">
                 EasyWrite!
               </span>
             </h1>
             <p className="text-2xl font-bold mb-8 text-blue-500">
               A simple blog app to share your thoughts.
             </p>
-            <p className="text-lg mb-4">
+            <p className="text-lg mb-4 dark:text-white">
               To read or add posts, please login or sign up.
             </p>
             <button
@@ -56,7 +57,7 @@ function Home() {
     );
   } else {
     return posts.length !== 0 ? (
-      <div className="py-8 w-full min-h-[100vh]">
+      <div className="py-24 w-full min-h-[100vh]">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {posts.map((post) => (

@@ -27,7 +27,7 @@ function Profile() {
   }, []);
 
   return !loading ? (
-    <div className="max-w-md min-h-screen mx-auto bg-gray-700 text-white rounded-lg shadow-lg p-3 my-3">
+    <div className="max-w-md min-h-screen mx-auto bg-gray-700 text-white rounded-lg shadow-lg p-3 my-24">
       <h2 className="text-2xl font-bold text-yellow-600 hover:scale-105 duration-200 mb-5 inline-block">
         User Profile
       </h2>

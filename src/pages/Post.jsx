@@ -43,7 +43,7 @@ export default function Post() {
   };
 
   return post ? (
-    <div className="py-8 px-8">
+    <div className="py-24 px-8 dark:text-white">
       <Container>
         <div className="max-w-fit mx-auto flex justify-center mb-4 relative border rounded-xl p-2">
           <img
@@ -84,10 +84,10 @@ export default function Post() {
               {showModal && (
                 <Modal>
                   <div className="flex flex-col items-center justify-center p-4">
-                    <h2 className="text-lg text-black font-bold mb-2">
+                    <h2 className="text-lg text-black dark:text-white font-bold mb-2">
                       Confirm Delete Post!
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 dark:text-gray-300">
                       Are you sure you want to delete this post?
                     </p>
                     <div className="flex justify-center mt-4">
