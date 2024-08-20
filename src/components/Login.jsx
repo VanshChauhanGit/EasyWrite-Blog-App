@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login as authLogin } from "../store/authSlice";
-import { Button, Input, Logo, Loader } from "./index";
+import { Button, Input, Logo, Loader, PasswordInput } from "./index";
 import { useDispatch } from "react-redux";
 import authService from "../appwrite/auth";
 import { useForm } from "react-hook-form";
@@ -68,6 +68,7 @@ function Login() {
             <Input
               id="email"
               type="email"
+              className="shadow-lg"
               label="Email Address"
               placeholder="Enter your email address"
               required
@@ -80,10 +81,8 @@ function Login() {
                 },
               })}
             />
-            <Input
+            <PasswordInput
               id="password"
-              type="password"
-              label="Password"
               placeholder="Enter your password"
               required
               {...register("password", {

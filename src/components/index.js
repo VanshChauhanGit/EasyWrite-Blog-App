@@ -14,6 +14,7 @@ import AuthLayout from "./AuthLayout";
 import Signup from "./Signup";
 import PostForm from "./PostForm/PostForm";
 import Modal from "./Modal";
+import PasswordInput from "./PasswordInput";
 
 export {
   Footer,
@@ -32,4 +33,5 @@ export {
   PostForm,
   Signup,
   Modal,
+  PasswordInput,
 };

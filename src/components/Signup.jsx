@@ -3,7 +3,7 @@ import authService from "../appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../store/authSlice";
 import { useDispatch } from "react-redux";
-import { Button, Input, Logo, Loader } from "./index";
+import { Button, Input, Logo, Loader, PasswordInput } from "./index";
 import { useForm } from "react-hook-form";
 
 function Signup() {
@@ -64,6 +64,7 @@ function Signup() {
             <Input
               type="text"
               label="Name"
+              className="shadow-lg"
               placeholder="Enter your name"
               {...register("name", { required: true })}
             />
@@ -71,6 +72,7 @@ function Signup() {
               id="email"
               type="email"
               label="Email Address"
+              className="shadow-lg"
               placeholder="Enter your email address"
               {...register("email", {
                 required: true,
@@ -81,9 +83,7 @@ function Signup() {
                 },
               })}
             />
-            <Input
-              type="password"
-              label="Password"
+            <PasswordInput
               placeholder="Enter your password"
               {...register("password", { required: true })}
             />

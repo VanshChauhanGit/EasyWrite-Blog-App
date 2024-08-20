@@ -1,10 +1,17 @@
 import { forwardRef, useId } from "react";
 
-function Select({ label, options, className = "", labelClassName = "", ...props }, ref) {
+function Select(
+  { label, options, className = "", labelClassName = "", ...props },
+  ref
+) {
   const id = useId();
   return (
     <div className="w-full">
-      {label && <label htmlFor={id} className={`${labelClassName}`}>{label}</label>}
+      {label && (
+        <label htmlFor={id} className={`${labelClassName}`}>
+          {label}
+        </label>
+      )}
       <select
         {...props}
         id={id}
