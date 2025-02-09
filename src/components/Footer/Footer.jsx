@@ -37,7 +37,7 @@ function Footer() {
             <i class="fa-brands fa-linkedin"></i>
           </Link>
           <Link
-            to="https://github.com/VanshChauhan-1106"
+            to="https://github.com/VanshChauhanGit"
             target="_blank"
             className="text-4xl text-white ml-4 duration-500 hover:text-black "
           >
@@ -51,7 +51,7 @@ function Footer() {
             <i class="fa-brands fa-square-instagram"></i>
           </Link>
           <Link
-            to="https://vanshchauhan.netlify.app/"
+            to="https://vansh-chauhan.netlify.app/"
             target="_blank"
             className="text-4xl text-white ml-4 duration-500 hover:text-black"
           >
